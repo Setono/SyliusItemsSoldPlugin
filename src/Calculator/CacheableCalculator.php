@@ -10,7 +10,6 @@ use Sylius\Component\Core\Model\ProductVariant;
 
 class CacheableCalculator implements CalculatorInterface
 {
-
     /**
      * @var CalculatorInterface
      */
@@ -28,6 +27,7 @@ class CacheableCalculator implements CalculatorInterface
 
     /**
      * CacheableCalculator constructor.
+     *
      * @param CalculatorInterface $decorated
      * @param CacheInterface $cache
      * @param int|null $ttl
@@ -41,24 +41,28 @@ class CacheableCalculator implements CalculatorInterface
 
     /**
      * @param Product $product
+     *
      * @return int
      */
     public function summarizeForProduct(Product $product): int
     {
         $key = $this->buildKey($product);
-        return $this->passThroughCache($key, function() use ($product){
+
+        return $this->passThroughCache($key, function () use ($product) {
             return $this->decorated->summarizeForProduct($product);
         });
     }
 
     /**
      * @param ProductVariant $productVariant
+     *
      * @return int
      */
     public function summarizeForProductVariant(ProductVariant $productVariant): int
     {
         $key = $this->buildKey($product);
-        return $this->passThroughCache($key, function() use ($product){
+
+        return $this->passThroughCache($key, function () use ($product) {
             return $this->decorated->summarizeForProductVariant($productVariant);
         });
     }
@@ -66,6 +70,7 @@ class CacheableCalculator implements CalculatorInterface
     /**
      * @param string $key
      * @param callable $callable
+     *
      * @return mixed
      */
     private function passThroughCache(string $key, callable $callable)
@@ -73,11 +78,13 @@ class CacheableCalculator implements CalculatorInterface
         if (!$this->cache->has($key)) {
             $this->cache->set($key, call_user_func($callable));
         }
+
         return $this->cache->get($key);
     }
 
     /**
      * @param Product|ProductVariant $object
+     *
      * @return string
      */
     private function buildKey($object): string
@@ -85,15 +92,13 @@ class CacheableCalculator implements CalculatorInterface
         switch (true) {
             case $object instanceof Product:
                 return sprintf('product-%s', $object->getId());
-
             case $object instanceof Product:
                 return sprintf('product-variant-%s', $object->getId());
-
             default:
                 throw new \Exception(sprintf(
                     'Unsupported object to cache: %s. Expecting one of: %s',
                     get_class($object),
-                    join(', ', [Product::class, ProductVariant::class])
+                    implode(', ', [Product::class, ProductVariant::class])
                 ));
         }
     }

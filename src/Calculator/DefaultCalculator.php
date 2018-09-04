@@ -38,6 +38,7 @@ class DefaultCalculator implements CalculatorInterface
 
     /**
      * DefaultCalculator constructor.
+     *
      * @param OrderItemRepository $orderItemRepository
      * @param array $checkoutStates Check at OrderCheckoutStates
      * @param array $paymentStates Check at OrderPaymentStates
@@ -50,8 +51,7 @@ class DefaultCalculator implements CalculatorInterface
         array $paymentStates,
         array $shippingStates,
         ?int $summarizeInterval = null
-    )
-    {
+    ) {
         $this->orderItemRepository = $orderItemRepository;
         $this->checkoutStates = $checkoutStates;
         $this->paymentStates = $paymentStates;
@@ -61,6 +61,7 @@ class DefaultCalculator implements CalculatorInterface
 
     /**
      * @param Product $product
+     *
      * @return int
      */
     public function summarizeForProduct(Product $product): int
@@ -73,7 +74,7 @@ class DefaultCalculator implements CalculatorInterface
             ->setParameter('product', $product)
         ;
 
-        return (int)$this->addCommonWheres($queryBuilder)
+        return (int) $this->addCommonWheres($queryBuilder)
             ->getQuery()
             ->getSingleScalarResult()
             ;
@@ -81,6 +82,7 @@ class DefaultCalculator implements CalculatorInterface
 
     /**
      * @param ProductVariant $productVariant
+     *
      * @return int
      */
     public function summarizeForProductVariant(ProductVariant $productVariant): int
@@ -92,7 +94,7 @@ class DefaultCalculator implements CalculatorInterface
             ->setParameter('variant', $productVariant)
         ;
 
-        return (int)$this->addCommonWheres($queryBuilder)
+        return (int) $this->addCommonWheres($queryBuilder)
             ->getQuery()
             ->getSingleScalarResult()
             ;
@@ -100,6 +102,7 @@ class DefaultCalculator implements CalculatorInterface
 
     /**
      * @param QueryBuilder $queryBuilder
+     *
      * @return QueryBuilder
      */
     protected function addCommonWheres(QueryBuilder $queryBuilder): QueryBuilder

@@ -29,7 +29,7 @@ final class Configuration implements ConfigurationInterface
                             ->cannotBeEmpty()
                         ->end()
                         ->scalarNode('ttl')
-                            ->info("Cache TTL in seconds to override default cache service TTL")
+                            ->info('Cache TTL in seconds to override default cache service TTL')
                             ->defaultNull()
                         ->end()
                     ->end()
@@ -82,6 +82,7 @@ final class Configuration implements ConfigurationInterface
                 ->end()
             ->end()
             ;
+
         return $treeBuilder;
     }
 }

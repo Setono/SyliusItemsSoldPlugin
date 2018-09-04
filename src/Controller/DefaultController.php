@@ -10,13 +10,13 @@ use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Class DefaultController
- * @package Setono\SyliusItemsSoldPlugin
  */
 class DefaultController extends Controller
 {
     /**
      * @param Request $request
      * @param int $id
+     *
      * @return Response
      */
     public function productSoldAction(Request $request, int $id): Response
@@ -31,6 +31,7 @@ class DefaultController extends Controller
     /**
      * @param Request $request
      * @param int $id
+     *
      * @return Response
      */
     public function productVariantSoldAction(Request $request, int $id): Response
@@ -40,6 +41,5 @@ class DefaultController extends Controller
                 $this->container->get('sylius.repository.product_variant')->find($id)
             )
         );
-
     }
 }

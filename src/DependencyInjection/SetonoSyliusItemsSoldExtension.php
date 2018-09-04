@@ -29,7 +29,7 @@ final class SetonoSyliusItemsSoldExtension extends Extension
             $config['checkout_states'],
             $config['payment_states'],
             $config['shipping_states'],
-            $config['interval']
+            $config['interval'],
         ]);
 
         $container->setDefinition(
@@ -48,7 +48,7 @@ final class SetonoSyliusItemsSoldExtension extends Extension
                 'Setono\SyliusItemsSoldPlugin\Calculator\CacheableCalculator', [
                 new Reference('setono_sylius_items_sold.calculator.default'),
                 new Reference($config['cache']['service']),
-                $config['cache']['ttl']
+                $config['cache']['ttl'],
             ]);
 
             $container->setDefinition(

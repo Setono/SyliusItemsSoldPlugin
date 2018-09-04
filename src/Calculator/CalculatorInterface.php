@@ -11,12 +11,14 @@ interface CalculatorInterface
 {
     /**
      * @param Product $product
+     *
      * @return int
      */
     public function summarizeForProduct(Product $product): int;
 
     /**
      * @param ProductVariant $productVariant
+     *
      * @return int
      */
     public function summarizeForProductVariant(ProductVariant $productVariant): int;
