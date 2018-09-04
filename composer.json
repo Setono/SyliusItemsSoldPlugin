@@ -1,5 +1,5 @@
 {
-    "name": "igormukhingmailcom/sylius-items-sold-plugin",
+    "name": "setono/sylius-items-sold-plugin",
     "type": "sylius-plugin",
     "description": "Sylius Plugin to display items sold on every Product/ProductVariant details admin page.",
     "license": "MIT",
@@ -32,8 +32,8 @@
     "prefer-stable": true,
     "autoload": {
         "psr-4": {
-            "Mukhin\\SyliusItemsSoldPlugin\\": "src/",
-            "Tests\\Mukhin\\SyliusItemsSoldPlugin\\": "tests/"
+            "Setono\\SyliusItemsSoldPlugin\\": "src/",
+            "Tests\\Setono\\SyliusItemsSoldPlugin\\": "tests/"
         }
     },
     "autoload-dev": {

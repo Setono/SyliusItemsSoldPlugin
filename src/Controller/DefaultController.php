@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Mukhin\SyliusItemsSoldPlugin\Controller;
+namespace Setono\SyliusItemsSoldPlugin\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Class DefaultController
- * @package Mukhin\SyliusItemsSoldPlugin
+ * @package Setono\SyliusItemsSoldPlugin
  */
 class DefaultController extends Controller
 {
@@ -22,7 +22,7 @@ class DefaultController extends Controller
     public function productSoldAction(Request $request, int $id): Response
     {
         return new Response(
-            $this->container->get('mukhin_sylius_items_sold.calculator')->summarizeForProduct(
+            $this->container->get('setono_sylius_items_sold.calculator')->summarizeForProduct(
                 $this->container->get('sylius.repository.product')->find($id)
             )
         );
@@ -36,7 +36,7 @@ class DefaultController extends Controller
     public function productVariantSoldAction(Request $request, int $id): Response
     {
         return new Response(
-            $this->container->get('mukhin_sylius_items_sold.calculator')->summarizeForProductVariant(
+            $this->container->get('setono_sylius_items_sold.calculator')->summarizeForProductVariant(
                 $this->container->get('sylius.repository.product_variant')->find($id)
             )
         );

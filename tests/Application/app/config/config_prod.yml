@@ -13,16 +13,16 @@ monolog:
             level: debug
 
 services:
-    app.mukhin_sylius_items_sold.cache:
+    app.setono_sylius_items_sold.cache:
         class: Symfony\Component\Cache\Simple\FilesystemCache
         arguments:
         - ''
         - 0
         - "%kernel.cache_dir%/items-sold"
 
-mukhin_sylius_items_sold:
+setono_sylius_items_sold:
     cache:
-        service: 'app.mukhin_sylius_items_sold.cache'
+        service: 'app.setono_sylius_items_sold.cache'
         ttl: 1800
     interval: 14
     payment_states:

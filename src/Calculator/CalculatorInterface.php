@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Mukhin\SyliusItemsSoldPlugin\Calculator;
+namespace Setono\SyliusItemsSoldPlugin\Calculator;
 
 use Sylius\Component\Core\Model\Product;
 use Sylius\Component\Core\Model\ProductVariant;

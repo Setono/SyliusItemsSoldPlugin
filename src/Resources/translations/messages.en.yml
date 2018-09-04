@@ -1,4 +1,4 @@
-mukhin_sylius_items_sold:
+setono_sylius_items_sold:
     ui:
         sold_items:
             product: Sold products

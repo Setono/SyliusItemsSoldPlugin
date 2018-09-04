@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Mukhin\SyliusItemsSoldPlugin\DependencyInjection;
+namespace Setono\SyliusItemsSoldPlugin\DependencyInjection;
 
 use Sylius\Component\Core\OrderCheckoutStates;
 use Sylius\Component\Core\OrderPaymentStates;
@@ -18,7 +18,7 @@ final class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder(): TreeBuilder
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('mukhin_sylius_items_sold');
+        $rootNode = $treeBuilder->root('setono_sylius_items_sold');
         $rootNode
             ->children()
                 ->arrayNode('cache')

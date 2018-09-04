@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Mukhin\SyliusItemsSoldPlugin;
+namespace Setono\SyliusItemsSoldPlugin;
 
 use Sylius\Bundle\CoreBundle\Application\SyliusPluginTrait;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-final class MukhinSyliusItemsSoldPlugin extends Bundle
+final class SetonoSyliusItemsSoldPlugin extends Bundle
 {
     use SyliusPluginTrait;
 }

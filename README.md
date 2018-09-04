@@ -1,4 +1,4 @@
-# MukhinSyliusItemsSoldPlugin
+# SetonoSyliusItemsSoldPlugin
 
 Sylius Plugin to display items sold on every Product/ProductVariant details admin page
 
@@ -9,7 +9,7 @@ Sylius Plugin to display items sold on every Product/ProductVariant details admi
 ### Add plugin to composer.json
 
 ```bash
-composer require igormukhingmailcom/sylius-items-sold-plugin
+composer require setono/sylius-items-sold-plugin
 ```
 
 ### Register plugin at AppKernel.php
@@ -23,7 +23,7 @@ final class AppKernel extends Kernel
     {
         return array_merge(parent::registerBundles(), [
             // ...
-            new \Mukhin\SyliusItemsSoldPlugin\MukhinSyliusItemsSoldPlugin(),
+            new \Setono\SyliusItemsSoldPlugin\SetonoSyliusItemsSoldPlugin(),
         ]);
     }
 }
@@ -33,8 +33,8 @@ final class AppKernel extends Kernel
 
 ```yaml
 # app/config/routing.yml
-mukhin_sylius_items_sold_plugin_admin:
-    resource: "@MukhinSyliusItemsSoldPlugin/Resources/config/admin_routing.yml"
+setono_sylius_items_sold_plugin_admin:
+    resource: "@SetonoSyliusItemsSoldPlugin/Resources/config/admin_routing.yml"
     prefix: /admin
 
 ```
@@ -53,16 +53,16 @@ But lets suppose we need to:
 ```yaml
 # app/config/config.yml
 services:
-    app.mukhin_sylius_items_sold.cache:
+    app.setono_sylius_items_sold.cache:
         class: Symfony\Component\Cache\Simple\FilesystemCache
         arguments:
             - ''
             - 0
             - "%kernel.cache_dir%/items-sold"
 
-mukhin_sylius_items_sold:
+setono_sylius_items_sold:
     cache:
-        service: 'app.mukhin_sylius_items_sold.cache'
+        service: 'app.setono_sylius_items_sold.cache'
         ttl: 1800
     interval: 14
     payment_states:
@@ -76,7 +76,7 @@ Tips:
 - Don't forget to clean cache after changing `interval` parameter.
 - Don't specify `interval` if you wish to count even items added to carts 
   (as far as cart doesn't have order date at `checkoutCompletedAt` field)
-- Discover `Mukhin\SyliusItemsSoldPlugin\DependencyInjection\Configuration`
+- Discover `Setono\SyliusItemsSoldPlugin\DependencyInjection\Configuration`
   for more info about config options
   
 # (Manually) Test plugin

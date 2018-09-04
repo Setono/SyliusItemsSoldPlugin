@@ -3,6 +3,6 @@ sylius:
 
 # Put your own routes here
 
-mukhin_sylius_items_sold_plugin_admin:
-    resource: "@MukhinSyliusItemsSoldPlugin/Resources/config/admin_routing.yml"
+setono_sylius_items_sold_plugin_admin:
+    resource: "@SetonoSyliusItemsSoldPlugin/Resources/config/admin_routing.yml"
     prefix: /admin

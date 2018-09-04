@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Mukhin\SyliusItemsSoldPlugin\Calculator;
+namespace Setono\SyliusItemsSoldPlugin\Calculator;
 
 use Doctrine\ORM\QueryBuilder;
 use Sylius\Bundle\OrderBundle\Doctrine\ORM\OrderItemRepository;
