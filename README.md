@@ -1,6 +1,9 @@
 # SetonoSyliusItemsSoldPlugin
 
-[![Build Status](https://travis-ci.org/Setono/SyliusItemsSoldPlugin.svg?branch=master)](https://travis-ci.org/Setono/SyliusItemsSoldPlugin)
+[![Latest Version on Packagist][ico-version]][link-packagist]
+[![Software License][ico-license]](LICENSE)
+[![Build Status][ico-travis]][link-travis]
+[![Quality Score][ico-code-quality]][link-code-quality]
 
 Sylius Plugin to display items sold on every Product/ProductVariant details admin page
 
@@ -114,3 +117,12 @@ Tips:
   `http://localhost:8000/admin/products/1/variants/1/edit`
 
 - See how much that item was ordered (or even added to cart depending on config)
+
+[ico-version]: https://img.shields.io/packagist/v/setono/sylius-items-sold-plugin.svg?style=flat-square
+[ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
+[ico-travis]: https://img.shields.io/travis/Setono/SyliusItemsSoldPlugin/master.svg?style=flat-square
+[ico-code-quality]: https://img.shields.io/scrutinizer/g/Setono/SyliusItemsSoldPlugin.svg?style=flat-square
+
+[link-packagist]: https://packagist.org/packages/setono/sylius-items-sold-plugin
+[link-travis]: https://travis-ci.org/Setono/SyliusItemsSoldPlugin
+[link-code-quality]: https://scrutinizer-ci.com/g/Setono/SyliusItemsSoldPlugin
