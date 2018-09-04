@@ -1,5 +1,7 @@
 # SetonoSyliusItemsSoldPlugin
 
+[![Build Status](https://travis-ci.org/Setono/SyliusItemsSoldPlugin.svg?branch=master)](https://travis-ci.org/Setono/SyliusItemsSoldPlugin)
+
 Sylius Plugin to display items sold on every Product/ProductVariant details admin page
 
 ![alt text](plugin.png)
