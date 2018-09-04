@@ -60,9 +60,9 @@ class CacheableCalculator implements CalculatorInterface
      */
     public function summarizeForProductVariant(ProductVariant $productVariant): int
     {
-        $key = $this->buildKey($product);
+        $key = $this->buildKey($productVariant);
 
-        return $this->passThroughCache($key, function () use ($product) {
+        return $this->passThroughCache($key, function () use ($productVariant) {
             return $this->decorated->summarizeForProductVariant($productVariant);
         });
     }
