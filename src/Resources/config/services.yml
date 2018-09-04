@@ -1,0 +1,18 @@
+services:
+    mukhin_sylius_items_sold.block_event_listener.admin.product.update.tab_details.products_sold:
+        class: Sylius\Bundle\UiBundle\Block\BlockEventListener
+        arguments:
+            - '@@MukhinSyliusItemsSoldPlugin/block/productOrders.html.twig'
+        tags:
+            - { name: kernel.event_listener, event: sonata.block.event.sylius.admin.product.update.tab_details, method: onBlockEvent }
+
+    mukhin_sylius_items_sold.block_event_listener.admin.product_variant.update.tab_details.products_sold:
+        class: Sylius\Bundle\UiBundle\Block\BlockEventListener
+        arguments:
+            - '@@MukhinSyliusItemsSoldPlugin/block/productVariantOrders.html.twig'
+        tags:
+            - { name: kernel.event_listener, event: sonata.block.event.sylius.admin.product_variant.update.tab_details, method: onBlockEvent }
+
+    mukhin_sylius_items_sold.controller.default:
+        class: Mukhin\SyliusItemsSoldPlugin\Controller\DefaultController
+        public: true

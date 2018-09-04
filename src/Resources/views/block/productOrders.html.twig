@@ -1,0 +1,6 @@
+<div class="ui segment">
+    <div class="required field">
+        <label>{{ 'mukhin_sylius_items_sold.ui.sold_items.product'|trans }}</label>
+        {{ render(url('mukhin_sylius_items_sold_plugin_admin_product', { 'id': settings.form.vars.value.id })) }}
+    </div>
+</div>

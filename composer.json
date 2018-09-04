@@ -1,7 +1,7 @@
 {
-    "name": "sylius/plugin-skeleton",
+    "name": "igormukhingmailcom/sylius-items-sold-plugin",
     "type": "sylius-plugin",
-    "description": "Acme example plugin for Sylius.",
+    "description": "Sylius Plugin to display items sold on every Product/ProductVariant details admin page.",
     "license": "MIT",
     "require": {
         "php": "^7.1",
@@ -32,12 +32,13 @@
     "prefer-stable": true,
     "autoload": {
         "psr-4": {
-            "Acme\\SyliusExamplePlugin\\": "src/",
-            "Tests\\Acme\\SyliusExamplePlugin\\": "tests/"
+            "Mukhin\\SyliusItemsSoldPlugin\\": "src/",
+            "Tests\\Mukhin\\SyliusItemsSoldPlugin\\": "tests/"
         }
     },
     "autoload-dev": {
-        "classmap": ["tests/Application/app/AppKernel.php"]
+        "classmap": ["tests/Application/app/AppKernel.php"],
+        "files": [ "vendor/symfony/symfony/src/Symfony/Component/VarDumper/Resources/functions/dump.php" ]
     },
     "extra": {
         "branch-alias": {

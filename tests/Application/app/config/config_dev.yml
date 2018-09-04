@@ -5,9 +5,20 @@ doctrine:
     dbal:
         path: "%kernel.project_dir%/var/db_dev.sql"
 
+sonata_block:
+    profiler:
+        enabled:        true
+        template:       "@SonataBlock/Profiler/block.html.twig"
+        container_types:
+            - sonata.block.service.template
+    container:
+        templates:
+        types:
+            - sonata.block.service.template
+
 web_profiler:
-  toolbar: true
-  intercept_redirects: false
+    toolbar: true
+    intercept_redirects: false
 
 framework:
     router:

@@ -1,1 +1,15 @@
-# Define your own admin routes here
+mukhin_sylius_items_sold_plugin_admin_product:
+    path: /_items-sold/product/{id}
+    methods: [GET]
+    requirements:
+        id: \d+
+    defaults:
+        _controller: mukhin_sylius_items_sold.controller.default:productSoldAction
+
+mukhin_sylius_items_sold_plugin_admin_product_variant:
+    path: /_items-sold/product-variant/{id}
+    methods: [GET]
+    requirements:
+        id: \d+
+    defaults:
+        _controller: mukhin_sylius_items_sold.controller.default:productVariantSoldAction

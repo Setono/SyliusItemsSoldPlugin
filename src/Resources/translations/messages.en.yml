@@ -1,0 +1,5 @@
+mukhin_sylius_items_sold:
+    ui:
+        sold_items:
+            product: Sold products
+            product_variant: Sold variants
